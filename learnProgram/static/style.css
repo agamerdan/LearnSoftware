@@ -1,0 +1,23 @@
+.body{
+    background-color: rgb(60, 59, 59);
+    font-family:Arial, Helvetica, sans-serif;
+    font-size: 24px;
+}
+.nav-link:hover{
+    background-color: rgb(229, 149, 21);
+    border-radius: 4px;
+}
+.kard{
+    background-color: black;
+    border-radius: 1%;
+    
+}
+
+.buton{
+    background-color:rgb(229, 149, 21);
+    border-radius: 8px;
+    float: right;
+    margin-right:  10px;
+    margin-bottom: 10px;
+    padding: 4px 4px 6px 6px;
+}
