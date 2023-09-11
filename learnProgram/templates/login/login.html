@@ -1,1 +1,110 @@
-<h1>Login</h1>
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <link rel="stylesheet" href="{% static 'css/formStyle.css' %}">
+    <title>Kodla</title>
+</head>
+<body>
+    <div class="container">
+      {% if bayrak == True %}
+          {% if messages %}
+            {% for message in messages %}
+              <div class="alert success mt-2">
+                <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+                {{ message }}
+              </div>
+            {% endfor %}
+        {% endif %}
+      {% else %}
+          {% if messages %}
+           {% for message in messages %}
+             <div class="alert mt-2">
+              <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+              {{ message }}
+            </div>
+          {% endfor %}
+         {% endif %}
+      {% endif %}
+      
+        <div class="row">
+            <div class="col-2">
+
+            </div>
+            <div class="col-8 kard">
+                <form method="post" style="max-width:800px;margin:auto" class="form-group mt-5">
+                    {% csrf_token %}
+                    <h2 class="text-white text-center mb-3">Ulgama Gir</h2>
+                    <div class="input-container">
+                      <i class="fa fa-user icon"></i>
+                      <input class="input-field" type="text" placeholder="Ulanjy Ady" name="usrnm" required>
+                    </div>
+                  
+                   
+                    
+                    <div class="input-container">
+                      <i class="fa fa-key icon"></i>
+                      <input class="input-field" type="password" placeholder="Parola" name="password" id="showPasword" required>
+                      <i class="fa-solid fa-eye" id="togglepassword"></i>
+                    </div>
+
+                   
+                  <div class="row">
+                    <div class="col">
+                        <button type="submit" class="btn btn-primary buton" >Ulgama Gir</button>
+                    </div>
+                    <div class="col">
+                        <a href="{% url 'index' %}" class= "btn btn-danger buton1" >Red Et</a>
+                    </div>
+                  </div>
+                   
+                  </form>
+
+            </div>
+            <div class="col-2">
+                
+            </div>
+
+        </div>
+        
+    </div>
+    <script>
+       icon=document.getElementById("togglepassword")
+       icon1=document.getElementById("togglepassword1")
+
+       icon.addEventListener('click', function(){
+        var x=document.getElementById("showPasword");
+        if(x.type=="password"){
+         x.type="text"
+        }else{
+         x.type="password"
+        }
+       });
+
+       icon1.addEventListener('click', function(){
+        var x=document.getElementById("showPaswordConf");
+        if(x.type=="password"){
+         x.type="text"
+        }else{
+         x.type="password"
+        }
+       });
+
+       
+
+
+       
+
+        
+    </script>
+
+    
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
+</body>
+</html>

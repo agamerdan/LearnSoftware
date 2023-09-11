@@ -1,6 +1,15 @@
 {% extends 'includes/base.html' %}
 {% block body %}
 <div class="container mt-3">
+
+  {% if messages %}
+    {% for message in messages %}
+      <div class="alert success mt-2">
+        <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+        {{ message }}
+      </div>
+    {% endfor %}
+  {% endif %}
     <div class="row kard">
       <div class="col-8">
         <div class=" card text-bg-dark mb-4 mt-3">

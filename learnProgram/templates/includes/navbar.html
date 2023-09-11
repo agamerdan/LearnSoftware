@@ -16,7 +16,12 @@
 </form>
 
 <div class="text-end mb-3 mt-3 mr-3">
+  {% if user.authanticated %}
   <a href="{% url 'login' %}" type="button" class="btn btn-outline-light me-2 mr-3">Login</a>
   <a href="{% url 'sigin' %}" type="button" class="btn btn-warning  mr-5">Sign-up</a>
+  {% else %}
+  <li><a href="{% url 'LearnJava' %}" class="btn btn-outline-light me-2 mr-3">Ulgamdan Çyk</a></li>
+  {% endif %}
+  
 </div>
 </div>
