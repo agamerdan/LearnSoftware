@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth.models import User
 from django.contrib import messages
-from django.contrib.auth import authenticate,login
+from django.contrib.auth import authenticate,login,logout
 
 def LoginView(request):
     if request.method == 'POST':
@@ -37,3 +37,7 @@ def SiginView(request):
             return redirect('login')
         
     return render(request, "login/register.html")
+
+def LogOut(request):
+    logout(request)
+    return redirect('index')
