@@ -1,7 +1,12 @@
+
 .body{
     background-color: rgb(60, 59, 59);
     font-family:Verdana, Geneva, Tahoma, sans-serif;
     font-size: 20px;
+    background-image: url('resim.jpg');
+    background-repeat: 2;
+    background-attachment: fixed;
+    background-size: cover;
 }
 .nav-link:hover{
     background-color: rgb(229, 149, 21);
